@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+          
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <meta charset="UTF-8">
@@ -14,24 +17,28 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
 
-  <header class="header">
-    <a href="#" class="logo">Rounak Mishra</a>
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#tools-section">Tools & Technologies</a>
-      <a href="#project">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/RounakMishra06" target="_blank" class="github-btn">GitHub</a>
-     
+  <header>
+  <div class="logo">Rounak <span>Mishra</span></div>
+  
+ <button class="menu-toggle" id="menu-toggle">☰ Menu</button>
 
-    </nav>
-  </header>
+
+  <nav id="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#tools-section">Tools & Technologies</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://github.com/RounakMishra06" target="_blank" class="github-btn">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <!-- HOME SECTION -->
 <section class="home" id="home">
@@ -42,9 +49,20 @@
     <div class="home-right">
       <div class="intro-text">
         <h1 class="typewriter">
-          <span class="hi-text">Hi, I'm</span> <span class="name-text">Rounak Mishra</span>
+          
+         <span class="hi-text">Hi, I'm</span> <span class="name-text">Rounak</span><br> 
+<span class="name-text">Mishra</span>
+
         </h1>
-        <p class="sub-heading" style="text-align: center;">Undergraduate Student @CSE Department, Galgotias University</p>
+      <!-- Existing normal line (visible on desktop) -->
+<p class="sub-heading normal-view">Undergraduate Student  @CSE Department, <br>Galgotias University</p>
+
+
+
+
+
+
+</div>
       </div>
       <div class="resume-btn-wrapper">
         <a href="nce.pdf" target="_blank" class="resume-btn">View My Resume</a>
@@ -330,7 +348,7 @@
   </script>
   <footer class="footer">
     <p style="font-size: 1.2rem;" >© 2025 Rounak Mishra. All rights reserved.</p>
-    <br>        
+    <br>                                            
     <p><strong>Email:</strong> <a href="mailto:mrounak198@gmail.com">mrounak198@gmail.com</a></p>
     <p><strong>Phone:</strong> <a href="tel:+919631660148">+91 9631660148</a></p>
   </div>
@@ -365,6 +383,24 @@
       homeSection.style.backgroundColor = `rgba(0, 0, 0, ${dimness + blinkIntensity})`;
     });
   </script>
+
+  <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  });
+</script>
+
   
   
   

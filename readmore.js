@@ -1,57 +1,64 @@
+console.log("JS file loaded");
+
+// Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}
+
+// Toggle Buttons
 document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const moreText = this.previousElementSibling?.querySelector('.more-text');
-      if (!moreText) return;
-  
+  btn.addEventListener('click', function () {
+    const serviceBox = this.closest('.service-box');
+    const cardInner = serviceBox?.querySelector('.card-inner');
+    const moreText = serviceBox?.querySelector('.more-text');
+
+    if (cardInner) {
+      cardInner.classList.toggle('flipped');
+    }
+
+    if (moreText) {
       moreText.classList.toggle('show');
-      this.textContent = moreText.classList.contains('show') ? 'Read Less' : 'Read More';
-  
       if (moreText.classList.contains('show')) {
         moreText.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    });
-  });
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const cardInner = this.closest('.service-box').querySelector('.card-inner');
-      cardInner.classList.toggle('flipped');
-  
-      this.textContent = cardInner.classList.contains('flipped') ? 'Read Less' : 'Read More';
-    });
-  });
-  console.log("JS file loaded");
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const cardInner = this.closest('.service-box').querySelector('.card-inner');
-      cardInner.classList.toggle('slid');
-      this.textContent = cardInner.classList.contains('slid') ? 'Read Less' : 'Read More';
-    });
-  });
-  <script>
-  let isSlid = false;
+    }
 
-
-</script>
-document.querySelectorAll('.toggle-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const card = button.previousElementSibling;
-    card.classList.toggle('flipped');
-
-    button.textContent = card.classList.contains('flipped') ? 'Read Less' : 'Know More';
+    const isExpanded = cardInner?.classList.contains('flipped') || moreText?.classList.contains('show');
+    this.textContent = isExpanded ? 'Read Less' : 'Read More';
   });
 });
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-console.log("JS file loaded successfully");
-<script>
-  document.querySelectorAll('.toggle-btn').forEach(button =  {
-    button.addEventListener('click', () => {
-      const card = button.previousElementSibling;
-      card.classList.toggle('flipped');
-      button.textContent = card.classList.contains('flipped') ? 'Read Less' : 'Know More';
-    });
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    if (navLinks.classList.contains('active')) {
+      navLinks.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
-</script>
+});
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
 
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
 
-
-
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
